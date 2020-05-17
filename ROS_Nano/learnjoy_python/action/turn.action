@@ -1,0 +1,8 @@
+#goal
+int8 rotDir
+---
+#result
+bool stopRot
+---
+#feedback
+int8 contRot
