@@ -1,0 +1,13 @@
+yolo_model:
+
+  config_file:
+    name: yolov3-tiny-obj.cfg
+  weight_file:
+    name: yolov3-tiny-obj_final.weights
+  threshold:
+    value: 0.01
+  detection_classes:
+    names:
+      - door
+      - corridor
+      - light
