@@ -1,0 +1,25 @@
+<launch>
+ 
+ <!-- joy node -->
+  <node respawn="true" pkg="joy"
+        type="joy_node" name="bed_joy" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="autorepeat_rate" value="7" />
+  </node>
+
+ <!-- Turning Action Server -->
+	<node pkg="learnjoy_python" type="turnActionServer.py" name="turnserver"/>
+
+ <!-- Controller Interpreter -->
+  <node pkg="learnjoy_python" type="joy_pub_bed_v2.py" name="teleop"/>
+  
+ <!-- Find Corridor Node -->
+	<node pkg="darknet_ros" type="findcorridorboxtest.py" name="corridorState"/>
+  
+ <!-- Arduino -->
+  <node pkg="rosserial_python" type="serial_node.py" name="arduino">
+   <param name="port" value="/dev/ttyACM0"/>
+  </node>
+ <!-- rosrun rosserial_python serial_node.py /dev/ttyACM0 -->
+
+</launch>

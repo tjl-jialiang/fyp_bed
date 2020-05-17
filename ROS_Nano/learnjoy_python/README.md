@@ -1,0 +1,1 @@
+Paste the whole folder (learnjoy_python) in *catkin_ws/src*. Remember to run catkin_make after which
